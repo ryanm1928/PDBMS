@@ -1,0 +1,74 @@
+*RIHT , MID , LEFT :
+
+->SELECT Nama_Nasabah, Left(Nama_Nasabah,2), Mid(Nama_Nasabah,3,1),
+Right(Nama_Nasabah,2) FROM Nasabah;
+
+*FUNGSI SUBSTRING()
+
+->mengambil karakter dari posisi awal, dari posisi sebelah kanan
+
+SELECT Nama_Nasabah, substring(Nama_Nasabah,4), Mid(Nama_Nasabah,3)
+FROM Nasabah;
+
+->Bambang Susilo = bang Susilo
+
+*Format Date Time date_format 
+ %M : nama utuh dari bulan
+ %b : nama bulan (tiga karakter inisial)
+ %m : bulan dua digit (01-12)
+ %c:bulan satu digit (1-12)
+ %d: hari dua digit (01-31)
+ %e : hari (1-31)
+ %r:waktu 12 jam dengan prefiks AM atau PM
+ %T : waktu 24 jam
+ %H : Jam dua digit
+ %i : menit dua digit
+ %s : detik dua digit
+
+Format time_format() untuk MY Sql:
+ %Y : tahun empat digit
+ %y : tahun dua digit
+ %M : nama utuh dari bulan
+ %b : nama bulan (tiga karakter inisial)
+ %m : bulan dua digit (01-12)
+ %c:bulan satu digit (1-12)
+ %d: hari dua digit (01-31)
+ %e : hari (1-31)
+ %r:waktu 12 jam dengan prefiks AM atau PM
+ %T : waktu 24 jam
+ %H : Jam dua digit
+ %i : menit dua digit
+ %s: detik dua digit
+
+ YEAR() : tahun dari nilai tanggal
+ MONTH() : nomor bulan (1-12)
+ MONTHNAME() : nama bulan (JANUARI-DESEMBER)
+ DAYOFMONTH() : nomor hari dalam satu bulan (1-31)
+ DAYOFNAME() : nomor hari (Sunday-Saturday)
+ DAYOFWEEK() :nomor hari (1-7 untuk Sunday-saturday)
+ WEEKDAY() : nomor hari (0-6 untuk Monday-Sunday)
+ DAYOFYEAR() : nomor hari dalam satu tahun (1-366)
+ HOUR() : jam 24 jam (0-23)
+ MINUTE() : minute (0-59)
+ SECOND() : DETIK (0-59)
+
+Tanggal dan waktu saat ini melalui tiga fungsi.
+ Fungsi NOW()
+ Fungsi Curdate()
+ Curtime()
+
+
+
+Join dengan 2 table
+
+SELECT 
+	nasabah.No_Rekening,
+	nasabah.Nama_Nasabah,
+	pemasukkan.Tanggal_Waktu as
+	pemasukkan.Saldo_Masuk, 
+	nasabah.Saldo_Akhir
+FROM 
+	pemasukkan,
+	nasabah
+WHERE pemasukkan.no_rekening=nasabah.no_rekening;
+
